@@ -1,0 +1,9 @@
+<ul>Here is a list of all the recipes available
+<%@recipes.each do |v|%>
+<li>
+<a href='/recipes/<%=v.id%>'><%=v.name%></a>
+</li>
+<%end%>
+<br>
+<a href='/recipes/new'><h3>click here to make a new recipe</h3></a>
+</ul>
