@@ -2,10 +2,17 @@ class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
+    set :method_override, true
   end
 
-  get '/' do
-    redirect to "/recipes"
+  # get '/' do
+  #   redirect to "/recipes"
+  # end
+
+
+  #NEW
+  get '/recipes/new' do
+    erb :new
   end
 
   #INDEX
@@ -15,10 +22,6 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
-  #NEW
-  get '/recipes/new' do
-    erb :new
-  end
 
   #CREATE
   post "/recipes" do
